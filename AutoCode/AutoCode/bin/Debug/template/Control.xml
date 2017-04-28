@@ -1,0 +1,1025 @@
+<?xml version="1.0" encoding="utf-8"?>
+<profile>
+  <section name="Control">
+    <entry name="dgvdict">            dict_dgv_{0}.Column = "{0}";
+            dict_dgv_{0}.DictCode = "{1}";
+            this.wf_RetObj.DictBinding.Add(dict_dgv_{0});</entry>
+    <entry name="QueCode">using System.Data;
+using System;
+namespace {0}
+{{
+    public partial class {1} : KpTM.Controls.FrmTemplate.KpFrmQuery
+    {{
+        public {1}()
+        {{
+            InitializeComponent();
+        }}
+        private void {1}_Load(object sender, EventArgs e)
+        {{
+            InitEnvironment();
+        }}
+
+        /// &lt;summary&gt;
+        /// 初始化环境
+        /// &lt;/summary&gt;
+        private void InitEnvironment()
+        {{
+            //==设置表格列信息
+            DataTable dtC = dgvMain.Configure.Tables["RESULT_OUTPUT_CONTROL"];
+            int col=0;
+{2}
+            dgvMain.Configure = dgvMain.Configure;//使列信息重新绘制
+        }}
+    }}
+}}</entry>
+    <entry name="fieldParamBinding">            fpb_{0}.Field = this.wf_{3};
+            fpb_{0}.ParamName = "{1}";
+            this.{2}.Request.InputParamBindings.Add(fpb_{0});</entry>
+    <entry name="InitDict">            Kingstar.UIFramework.WorkView.DictBinding dict_dgv_{0} = new Kingstar.UIFramework.WorkView.DictBinding();</entry>
+    <entry name="DgvDict">            dict_dgv_{0}.Column = "{0}";
+            dict_dgv_{0}.DictCode = "{1}";
+            this.wf_RetObj.DictBinding.Add(dict_dgv_{0});</entry>
+    <entry name="QueDesigner">namespace {0}
+{{
+    partial class {1}
+    {{
+        /// &lt;summary&gt;
+        /// 必需的设计器变量。
+        /// &lt;/summary&gt;
+        private System.ComponentModel.IContainer components = null;
+
+        /// &lt;summary&gt;
+        /// 清理所有正在使用的资源。
+        /// &lt;/summary&gt;
+        /// &lt;param name="disposing"&gt;如果应释放托管资源，为 true；否则为 false。&lt;/param&gt;
+        protected override void Dispose(bool disposing)
+        {{
+            if (disposing &amp;&amp; (components != null))
+            {{
+                components.Dispose();
+            }}
+            base.Dispose(disposing);
+        }}
+
+        #region Windows 窗体设计器生成的代码
+
+        /// &lt;summary&gt;
+        /// 设计器支持所需的方法 - 不要
+        /// 使用代码编辑器修改此方法的内容。
+        /// &lt;/summary&gt;
+        private void InitializeComponent()
+        {{
+{2}
+            Kingstar.UIFramework.WorkView.FieldParamBinding fpb_RetObj = new Kingstar.UIFramework.WorkView.FieldParamBinding();
+            this.wf_RetObj = new Kingstar.UIFramework.WorkView.KSWorkField();
+            this.panel_Main_Top.SuspendLayout();
+            this.gup_Main_Fill.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // ksWorkView_ModDef
+            // 
+{3}
+            this.ksWorkView_ModDef.WorkFields.Add(this.wf_RetObj);
+            // 
+            // ksWorkViewCRequest_Que
+            // 
+            // 
+            // 
+            // 
+{7}
+            fpb_RetObj.Field = this.wf_RetObj;
+            fpb_RetObj.ParamName = "@DataTable";
+            this.ksWorkViewCRequest_Que.Request.OutputParamBindings.Add(fpb_RetObj);
+            this.ksWorkViewCRequest_Que.Request.RequestType = "{6}";
+            this.ksWorkViewCRequest_Que.Request.TimeOut = 3000;
+            // 
+            // dgvMain
+            // 
+            this.dgvMain.Field = this.wf_RetObj;
+            this.dgvMain.Location = new System.Drawing.Point(3, 17);
+            this.dgvMain.Size = new System.Drawing.Size(794, 340);
+{4}
+            // 
+            // wf_RetObj
+            // 
+            // 
+            // 
+            // 
+{8}
+            this.wf_RetObj.Checker.ErrorMessage = null;
+            this.wf_RetObj.Checker.Hint = null;
+            this.wf_RetObj.Checker.Max = new decimal(new int[] {{
+            65535,
+            0,
+            0,
+            0}});
+            this.wf_RetObj.Checker.Min = new decimal(new int[] {{
+            65535,
+            0,
+            0,
+            -2147483648}});
+            this.wf_RetObj.ObjectDataType = Kingstar.UIFramework.WorkView.KSWorkField.ObjectType.KSDataTale;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 432);
+            this.Name = "{1}";
+            this.Text = "{1}";
+            this.Load += new System.EventHandler(this.{1}_Load);
+            this.Controls.SetChildIndex(this.panel_Main_Top, 0);
+            this.Controls.SetChildIndex(this.gup_Main_Fill, 0);
+            this.gup_Main_Fill.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }}
+
+        #endregion
+
+{5}
+        private Kingstar.UIFramework.WorkView.KSWorkField wf_RetObj;
+
+    }}
+}}</entry>
+    <entry name="InitKmCheckedListBox">            this.{0} = new KmNGTF.Controls.KmCheckedListBox();</entry>
+    <entry name="KmCheckedListBox">            // 
+            // {0}
+            // 
+            this.{0}.CheckOnClick = true;
+            this.{0}.DefaultSelectedAll = true;
+            this.{0}.FormattingEnabled = true;
+            this.{0}.Location = new System.Drawing.Point({1}, {2});
+            this.{0}.Name = "{0}";
+            this.{0}.RightBit = null;
+            this.{0}.Size = new System.Drawing.Size(130, 70);
+            this.{0}.TabIndex = {3};</entry>
+    <entry name="DeclearKmCheckedListBox">        private KmNGTF.Controls.KmCheckedListBox {0};</entry>
+    <entry name="InitKmComboBox">            this.{0} = new KmNGTF.Controls.KmComboBox();</entry>
+    <entry name="KmComboBox">            // 
+            // {0}
+            // 
+            this.{0}.AutoAddNullItemAtFirstItem = true;
+            this.{0}.AutoRemPreCharWhenNotFundedInDataSource = false;
+            this.{0}.FormattingEnabled = true;
+            this.{0}.Location = new System.Drawing.Point({1}, {2});
+            this.{0}.Name = "{0}";
+            this.{0}.RightBit = null;
+            this.{0}.Size = new System.Drawing.Size(120, 20);
+            this.{0}.TabIndex = {3};
+            this.{0}.UpdateStatusBarEnabled = true;</entry>
+    <entry name="DeclearKmComboBox">        private KmNGTF.Controls.KmComboBox {0};</entry>
+    <entry name="InitKmCustomerID">            this.{0} = new KmNGTF.Controls.Custom.KmCustomerID();</entry>
+    <entry name="KmCustomerID">            // 
+            // {0}
+            // 
+            this.{0}.AutoAddNullItemAtFirstItem = true;
+            this.{0}.AutoRemPreCharWhenNotFundedInDataSource = false;
+            this.{0}.FormattingEnabled = true;
+            this.{0}.Location = new System.Drawing.Point({1}, {2});
+            this.{0}.Name = "{0}";
+            this.{0}.RightBit = null;
+            this.{0}.Size = new System.Drawing.Size(120, 20);
+            this.{0}.TabIndex = {3};
+            this.{0}.UpdateStatusBarEnabled = true;</entry>
+    <entry name="DeclearKmCustomerID">        private KmNGTF.Controls.Custom.KmCustomerID {0};</entry>
+    <entry name="InitKmCustomerType">            this.{0} = new KmNGTF.Controls.Custom.KmCustomerType();</entry>
+    <entry name="KmCustomerType">            // 
+            // {0}
+            // 
+            this.{0}.DictionaryCodes = null;
+            this.{0}.KeyLengths = null;
+            this.{0}.Location = new System.Drawing.Point({1}, {2});
+            this.{0}.Name = "{0}";
+            this.{0}.Size = new System.Drawing.Size(120, 20);
+            this.{0}.TabIndex = {3};</entry>
+    <entry name="DeclearKmCustomerType">        private KmNGTF.Controls.Custom.KmCustomerType {0};</entry>
+    <entry name="InitKmLabel">            this.kl_{0} = new KmNGTF.Controls.KmLabel();</entry>
+    <entry name="ModDefKmLabel">            this.{1}.Controls.Add(this.kl_{0});</entry>
+    <entry name="KmLabel">            // 
+            // kl_{0}
+            // 
+            this.kl_{0}.AutoSize = true;
+            this.kl_{0}.Field = null;
+            this.kl_{0}.Location = new System.Drawing.Point({2}, {3});
+            this.kl_{0}.Name = "kl_{0}";
+            this.kl_{0}.RightBit = null;
+            this.kl_{0}.Size = new System.Drawing.Size(40, 12);
+            this.kl_{0}.TabIndex = {4};
+            this.kl_{0}.Text = "{1}";</entry>
+    <entry name="DeclearKmLabel">        private KmNGTF.Controls.KmLabel kl_{0};</entry>
+    <entry name="InitKSWorkField">            this.wf_{0} = new Kingstar.UIFramework.WorkView.KSWorkField();</entry>
+    <entry name="InitFieldParamBinding">            Kingstar.UIFramework.WorkView.FieldParamBinding fpb_{0} = new Kingstar.UIFramework.WorkView.FieldParamBinding();</entry>
+    <entry name="ModDefKSWorkField">            this.ksWorkView_ModDef.WorkFields.Add(this.wf_{0});</entry>
+    <entry name="KSWorkField">            // 
+            // wf_{0}
+            // 
+            // 
+            // 
+            // 
+            this.wf_{0}.Checker.ErrorMessage = null;
+            this.wf_{0}.Checker.Hint = null;
+            this.wf_{0}.Checker.Max = new decimal(new int[] {{
+            65535,
+            0,
+            0,
+            0}});
+            this.wf_{0}.Checker.Min = new decimal(new int[] {{
+            65535,
+            0,
+            0,
+            -2147483648}});
+            this.wf_{0}.GoNextPressEnter = true;
+			this.wf_{0}.GroupIndex = {2};
+            this.wf_{0}.ObjectDataType = Kingstar.UIFramework.WorkView.KSWorkField.ObjectType.{1};</entry>
+    <entry name="InitDomain">            this.wf_{0}.Constrained = true;
+            this.wf_{0}.Domain = "{1}";</entry>
+    <entry name="InitIsRealtimeSynchronous">            this.wf_{0}.IsRealtimeSynchronous = true;</entry>
+    <entry name="DeclearKSWorkField">        private Kingstar.UIFramework.WorkView.KSWorkField wf_{0};</entry>
+    <entry name="InitMonitorField">            Kingstar.UIFramework.WorkView.MotitorWorkField motitor_{0} = new Kingstar.UIFramework.WorkView.MotitorWorkField();</entry>
+    <entry name="ModeDefMonitorFields">            motitor_{0}.MonitorWorkField = this.wf_{2};
+            this.wf_{1}.MonitorValueChangedFields.Add(motitor_{0});</entry>
+    <entry name="InitKmTextBox">            this.{0} = new KmNGTF.Controls.KmTextBox();</entry>
+    <entry name="KmTextBox">            // 
+            // {0}
+            // 
+            this.{0}.Format = KmNGTF.Controls.StringFormat.None;
+            this.{0}.Location = new System.Drawing.Point({1}, {2});
+            this.{0}.Name = "{0}";
+            this.{0}.RightBit = null;
+            this.{0}.Size = new System.Drawing.Size(120, 20);
+            this.{0}.TabIndex = {3};
+            this.{0}.UpdateStatusBarEnabled = true;</entry>
+    <entry name="InitDefaultValue">            this.wf_{0}.DefaultValue = "{1}";</entry>
+    <entry name="WFDict">            dict_{0}.Column = "";
+            dict_{0}.DictCode = "{1}";
+            this.wf_{0}.DictBinding.Add(dict_{0});</entry>
+    <entry name="InitWFDict">            Kingstar.UIFramework.WorkView.DictBinding dict_{0} = new Kingstar.UIFramework.WorkView.DictBinding();</entry>
+    <entry name="DeclearKmTextBox">        private KmNGTF.Controls.KmTextBox {0};</entry>
+    <entry name="InitKpControlsEnabledItem">            KpTM.Controls.Component.KpControlsEnabledItem kcei_upd_{0} = new KpTM.Controls.Component.KpControlsEnabledItem();</entry>
+    <entry name="ModDefKpControlsEnabledItem">            kcei_upd_{0}.Enabled = KpTM.Controls.Enums.EnabledMe.False;
+            kcei_upd_{0}.HostControl = this.{0};
+            kcei_upd_{0}.OprFlag = 2;
+            this.kpControlsEnabled_ModDef.ControlsEnabled.Add(kcei_upd_{0});</entry>
+    <entry name="InitControlCode">using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+
+using KpTM.Controls.FrmTemplate;
+using Kingstar.UIFramework.Core;
+using Kingstar.UIFramework.Entity;
+using SysTMComm.Consts;
+
+namespace {0}
+{{
+    /*
+     * EnvironmentFlag:-1 初始,0 细节,1 增加,2 修改,3 删除
+     */
+
+    public partial class {1} : KpFrmDoubleFun
+    {{
+        #region 权限属性
+        private string rg_que_;
+        [ConfigureProperty()]
+        public string rg_Que
+        {{
+            set
+            {{
+                rg_que_ = value;
+            }}
+            get
+            {{
+                return rg_que_;
+            }}
+        }}
+        private string rg_add_;
+        [ConfigureProperty()]
+        public string rg_Add
+        {{
+            set
+            {{
+                rg_add_ = value;
+            }}
+            get
+            {{
+                return rg_add_;
+            }}
+        }}
+        private string rg_upd_;
+        [ConfigureProperty()]
+        public string rg_Upd
+        {{
+            set
+            {{
+                rg_upd_ = value;
+            }}
+            get
+            {{
+                return rg_upd_;
+            }}
+        }}
+        private string rg_del_;
+        [ConfigureProperty()]
+        public string rg_Del
+        {{
+            set
+            {{
+                rg_del_ = value;
+            }}
+            get
+            {{
+                return rg_del_;
+            }}
+        }}
+        #endregion
+
+        public {1}()
+        {{
+            InitializeComponent();
+
+            base.KpForm_ButtonRightControl = true;
+        }}
+        private void {1}_Load(object sender, EventArgs e)
+        {{
+            InitEnvironment();
+        }}
+
+        #region funs
+        /// &lt;summary&gt;
+        /// 初始化环境
+        /// &lt;/summary&gt;
+        private void InitEnvironment()
+        {{
+            //==设置表格列信息
+            DataTable dtC = dgvMain.Configure.Tables["RESULT_OUTPUT_CONTROL"];
+			int col=0;
+{3}
+            dgvMain.Configure = dgvMain.Configure;//使列信息重新绘制
+        }}
+
+        /// &lt;summary&gt;
+        /// 更加查询到的结果集，设置控制可用状态
+        /// &lt;/summary&gt;
+        private void AfterQueControlsEnabled()
+        {{
+            if (dgvMain.DataGridView.Rows.Count &gt; 0)
+            {{
+                btnList.Enabled = true;
+                btnUpd.Enabled = true;
+                btnDel.Enabled = true;
+            }}
+            else
+            {{
+                btnList.Enabled = false;
+                btnUpd.Enabled = false;
+                btnDel.Enabled = false;
+            }}
+        }}
+        /// &lt;summary&gt;
+        /// 根据指定环境标志重置控件状态
+        /// &lt;/summary&gt;
+        /// &lt;param name="iEnvironmentFlag"&gt;&lt;/param&gt;
+        private void RetControlsState(int iEnvironmentFlag)
+        {{
+            kmFPNLBtnGup.Visible = false;
+            btnOk.Visible = false;
+            btnCancel.Visible = false;
+            //
+            if (iEnvironmentFlag == 0)
+            {{
+                kmFPNLBtnGup.Visible = true;
+                kmFPNLBtnGup.Enabled = true;
+                btnCancel.Visible = true;
+                btnCancel.Enabled = true;
+            }}
+            else if (iEnvironmentFlag == 1 || iEnvironmentFlag == 2 || iEnvironmentFlag == 3)
+            {{
+                btnOk.Visible = true;
+                btnOk.Enabled = true;
+                btnCancel.Visible = true;
+                btnCancel.Enabled = true;
+            }}
+        }}
+
+        /// &lt;summary&gt;
+        /// 给WorkFiled填充数据，以便控件显示
+        /// &lt;/summary&gt;
+        private void FillWorkFiledsValue(int iEnvironmentFlag)
+        {{
+            if (iEnvironmentFlag == 0)
+            {{
+                #region 0 细节
+                ReFillWorkFiled();
+                #endregion
+            }}
+            else if (iEnvironmentFlag == 1)
+            {{
+                #region 1 增加
+                if (checkbAddDef.Checked)
+                {{
+                    ReFillWorkFiled();
+                }}
+                else
+                {{
+                    ksWorkView_ModDef.Reset(2);
+                }}
+                #endregion
+            }}
+            else if (iEnvironmentFlag == 2)
+            {{
+                #region 2 修改
+                ReFillWorkFiled();
+                #endregion
+            }}
+            else if (iEnvironmentFlag == 3)
+            {{
+                #region 3 删除
+                ReFillWorkFiled();
+                #endregion
+            }}
+        }}
+        private void ReFillWorkFiled()
+        {{
+            DataGridViewRow dgvr = dgvMain.DataGridView.GetCurrentRow();
+            if (dgvr == null)
+            {{
+                ksWorkView_ModDef.Reset(2);
+            }}
+            else
+            {{
+{2}
+            }}
+        }}
+        #endregion
+
+        private void btnList_Click(object sender, EventArgs e)
+        {{
+            if (null == dgvMain.DataGridView.CurrentRow)
+            {{
+                KmNGTF.Common.ShowMessageBox.ShowInformation(SysTMComm.Consts.CTipInfo.SelectCurRowInGrid);
+                return;
+            }}
+            //控件kmFPNLBtnGup使用前的初始化
+            int iCurRowIndex = dgvMain.DataGridView.CurrentRow.Index + 1;
+            int iMaxRowCount = dgvMain.DataGridView.Rows.Count;
+            kmFPNLBtnGup.Init(iCurRowIndex, iMaxRowCount);
+            PreEnvironmentFlag = 0;
+            kpControlsVisible_ModDef.SetControlsVisible(PreEnvironmentFlag, true);
+            kpControlsEnabled_ModDef.SetControlsEnabled(PreEnvironmentFlag, false);
+            RetControlsState(PreEnvironmentFlag);
+            FillWorkFiledsValue(PreEnvironmentFlag);
+            SetCurTabPage(1, SysTMComm.Consts.CTipInfo.ModTabPageTitle_List);
+        }}
+
+        private void kmFPNLBtnGup_ClickBtnFirst(object sender, EventArgs e)
+        {{
+            if (dgvMain.DataGridView.Rows.Count &gt; 0)
+            {{
+                if (dgvMain.DataGridView.CurrentRow.Index != 0)
+                {{
+                    dgvMain.DataGridView.SetCurrentRow(0);
+                    FillWorkFiledsValue(PreEnvironmentFlag);
+                }}
+            }}
+        }}
+        private void kmFPNLBtnGup_ClickBtnNext(object sender, EventArgs e)
+        {{
+            if (dgvMain.DataGridView.CurrentRow.Index + 1 &lt; dgvMain.DataGridView.Rows.Count)
+            {{
+                dgvMain.DataGridView.SetCurrentRow(dgvMain.DataGridView.CurrentRow.Index + 1);
+                FillWorkFiledsValue(PreEnvironmentFlag);
+            }}
+        }}
+        private void kmFPNLBtnGup_ClickBtnPrevious(object sender, EventArgs e)
+        {{
+            if (dgvMain.DataGridView.CurrentRow.Index &gt; 0)
+            {{
+                dgvMain.DataGridView.SetCurrentRow(dgvMain.DataGridView.CurrentRow.Index - 1);
+                FillWorkFiledsValue(PreEnvironmentFlag);
+            }}
+        }}
+        private void kmFPNLBtnGup_ClickBtnLast(object sender, EventArgs e)
+        {{
+            if (dgvMain.DataGridView.Rows.Count &gt; 0)
+            {{
+                dgvMain.DataGridView.SetCurrentRow(dgvMain.DataGridView.Rows.Count - 1);
+                FillWorkFiledsValue(PreEnvironmentFlag);
+            }}
+        }}
+
+        private void btnQue_Click(object sender, EventArgs e)
+        {{
+            try
+            {{
+                ksWorkViewCRequest_Que.Command = GolCmdNOSys.CmdAdapter;
+                ksWorkViewCRequest_Que.ExecCommand();
+            }}
+            catch (KmNGTF.Common.Exceptions.NotQueryResult)
+            {{
+                dgvMain.DataGridView.Rows.Clear();
+                if (PreEnvironmentFlag != 3)
+                    KmNGTF.Common.ShowMessageBox.ShowInformation(SysTMComm.Consts.CTipInfo.Que_NoRecordReturn);
+            }}
+            catch (Exception othErr)
+            {{
+                dgvMain.DataGridView.Rows.Clear();
+                KmNGTF.Common.ShowMessageBox.ShowInformation(SysTMComm.Consts.CTipInfo.Que_OprFail + othErr.Message);
+            }}
+            AfterQueControlsEnabled();
+        }}
+        private void btnAdd_Click(object sender, EventArgs e)
+        {{
+            PreEnvironmentFlag = 1;
+            kpControlsVisible_ModDef.SetControlsVisible(PreEnvironmentFlag, true);
+            kpControlsEnabled_ModDef.SetControlsEnabled(PreEnvironmentFlag, true);
+            RetControlsState(PreEnvironmentFlag);
+            FillWorkFiledsValue(PreEnvironmentFlag);
+            SetCurTabPage(1, SysTMComm.Consts.CTipInfo.ModTabPageTitle_Add);
+			this.btnOk.Enabled = this.ksWorkViewCRequest_Add.CheckValid();
+        }}
+        private void btnUpd_Click(object sender, EventArgs e)
+        {{
+            PreEnvironmentFlag = 2;
+            kpControlsVisible_ModDef.SetControlsVisible(PreEnvironmentFlag, true);
+            kpControlsEnabled_ModDef.SetControlsEnabled(PreEnvironmentFlag, true);
+            RetControlsState(PreEnvironmentFlag);
+            FillWorkFiledsValue(PreEnvironmentFlag);
+            SetCurTabPage(1, SysTMComm.Consts.CTipInfo.ModTabPageTitle_Upd);
+			this.btnOk.Enabled = this.ksWorkViewCRequest_Upd.CheckValid();
+        }}
+        private void btnDel_Click(object sender, EventArgs e)
+        {{
+            PreEnvironmentFlag = 3;
+            kpControlsVisible_ModDef.SetControlsVisible(PreEnvironmentFlag, true);
+            kpControlsEnabled_ModDef.SetControlsEnabled(PreEnvironmentFlag, false);
+            RetControlsState(PreEnvironmentFlag);
+            FillWorkFiledsValue(PreEnvironmentFlag);
+            SetCurTabPage(1, SysTMComm.Consts.CTipInfo.ModTabPageTitle_Del);
+        }}
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {{
+            if (PreEnvironmentFlag == 1)
+            {{
+                ksWorkViewCRequest_Add.Command = GolCmdNOSys.CmdAdapter;
+                try
+                {{
+                    ksWorkViewCRequest_Add.ExecCommand();
+                    KmNGTF.Common.ShowMessageBox.ShowInformation(SysTMComm.Consts.CTipInfo.Add_OprSuccessful);
+                }}
+                catch (Exception curErr)
+                {{
+                    KmNGTF.Common.ShowMessageBox.ShowError(SysTMComm.Consts.CTipInfo.Add_OprFail + curErr.Message);
+                    return;
+                }}
+            }}
+            else if (PreEnvironmentFlag == 2)
+            {{
+                ksWorkViewCRequest_Upd.Command = GolCmdNOSys.CmdAdapter;
+                try
+                {{
+                    ksWorkViewCRequest_Upd.ExecCommand();
+                    KmNGTF.Common.ShowMessageBox.ShowInformation(SysTMComm.Consts.CTipInfo.Upd_OprSuccessful);
+                }}
+                catch (Exception curErr)
+                {{
+                    KmNGTF.Common.ShowMessageBox.ShowError(SysTMComm.Consts.CTipInfo.Upd_OprFail + curErr.Message);
+                    return;
+                }}
+            }}
+            else if (PreEnvironmentFlag == 3)
+            {{
+                ksWorkViewCRequest_Del.Command = GolCmdNOSys.CmdAdapter;
+                try
+                {{
+                    ksWorkViewCRequest_Del.ExecCommand();
+                    KmNGTF.Common.ShowMessageBox.ShowInformation(SysTMComm.Consts.CTipInfo.Del_OprSuccessful);
+                }}
+                catch (Exception curErr)
+                {{
+                    KmNGTF.Common.ShowMessageBox.ShowError(SysTMComm.Consts.CTipInfo.Del_OprFail + curErr.Message);
+                    return;
+                }}
+            }}
+
+            SetCurTabPage(0, SysTMComm.Consts.CTipInfo.ModTabPageTitle_Que);
+            btnQue_Click(null, null);
+            AfterQueControlsEnabled();
+
+            btnCancel_Click(null, null);
+        }}
+        private void btnCancel_Click(object sender, EventArgs e)
+        {{
+            PreEnvironmentFlag = -1;
+            SetCurTabPage(0, SysTMComm.Consts.CTipInfo.ModTabPageTitle_Que);
+        }}
+        private void ksWorkView_ModDef_ValueChanged(object sender, EventArgs e)
+        {{
+            if (PreEnvironmentFlag == 1)
+            {{
+                this.btnOk.Enabled = this.ksWorkViewCRequest_Add.CheckValid();
+            }}
+            else if (PreEnvironmentFlag == 2)
+            {{
+                this.btnOk.Enabled = this.ksWorkViewCRequest_Upd.CheckValid();
+            }}
+        }}
+    }}
+}}</entry>
+    <entry name="InitControlDesigner">namespace {0}
+{{
+    partial class {1}
+    {{
+        /// &lt;summary&gt;
+        /// 必需的设计器变量。
+        /// &lt;/summary&gt;
+        private System.ComponentModel.IContainer components = null;
+
+        /// &lt;summary&gt;
+        /// 清理所有正在使用的资源。
+        /// &lt;/summary&gt;
+        /// &lt;param name="disposing"&gt;如果应释放托管资源，为 true；否则为 false。&lt;/param&gt;
+        protected override void Dispose(bool disposing)
+        {{
+            if (disposing &amp;&amp; (components != null))
+            {{
+                components.Dispose();
+            }}
+            base.Dispose(disposing);
+        }}
+
+        #region Windows 窗体设计器生成的代码
+
+        /// &lt;summary&gt;
+        /// 设计器支持所需的方法 - 不要
+        /// 使用代码编辑器修改此方法的内容。
+        /// &lt;/summary&gt;
+        private void InitializeComponent()
+        {{
+{2}
+            Kingstar.UIFramework.WorkView.FieldParamBinding fpb_RetObj = new Kingstar.UIFramework.WorkView.FieldParamBinding();
+            this.dgvMain = new KmNGTF.Controls.KmDataGridView();
+            this.checkbAddDef = new KmNGTF.Controls.KmCheckBox();
+            this.btnDel = new KmNGTF.Controls.KmButton();
+            this.btnUpd = new KmNGTF.Controls.KmButton();
+            this.btnAdd = new KmNGTF.Controls.KmButton();
+            this.btnQue = new KmNGTF.Controls.KmButton();
+            this.btnList = new KmNGTF.Controls.KmButton();
+            this.ksWorkViewCRequest_Que = new Kingstar.UIFramework.WorkView.KSWorkViewCommandRequest();
+            this.ksWorkViewCRequest_Add = new Kingstar.UIFramework.WorkView.KSWorkViewCommandRequest();
+            this.ksWorkViewCRequest_Del = new Kingstar.UIFramework.WorkView.KSWorkViewCommandRequest();
+            this.ksWorkViewCRequest_Upd = new Kingstar.UIFramework.WorkView.KSWorkViewCommandRequest();
+            this.btnCancel = new KmNGTF.Controls.KmButton();
+            this.btnOk = new KmNGTF.Controls.KmButton();
+            this.kmFPNLBtnGup = new KmNGTF.Controls.Custom.KmFPNLBtnGup();
+            this.wf_RetObj = new Kingstar.UIFramework.WorkView.KSWorkField();
+            this.tcMain.SuspendLayout();
+            this.tpMain_1_Fill.SuspendLayout();
+            this.tpMain_1_Bottom.SuspendLayout();
+            this.tpMain_2_Bottom.SuspendLayout();
+            this.tpMain_1.SuspendLayout();
+            this.tpMain_2.SuspendLayout();
+            this.SuspendLayout();
+{3}
+            this.ksWorkView_ModDef.WorkFields.Add(this.wf_RetObj);
+            this.ksWorkView_ModDef.ValueChanged += new System.EventHandler(this.ksWorkView_ModDef_ValueChanged);
+            // 
+            // tpMain_1_Fill
+            // 
+            this.tpMain_1_Fill.Controls.Add(this.dgvMain);
+            this.tpMain_1_Fill.Location = new System.Drawing.Point(3, 60);
+            this.tpMain_1_Fill.Size = new System.Drawing.Size(730, 412);
+            // 
+            // tpMain_1_Bottom
+            // 
+            this.tpMain_1_Bottom.Controls.Add(this.checkbAddDef);
+            this.tpMain_1_Bottom.Controls.Add(this.btnDel);
+            this.tpMain_1_Bottom.Controls.Add(this.btnUpd);
+            this.tpMain_1_Bottom.Controls.Add(this.btnAdd);
+            this.tpMain_1_Bottom.Controls.Add(this.btnQue);
+            this.tpMain_1_Bottom.Controls.Add(this.btnList);
+            // 
+            // tpMain_1_Top
+            // 
+            this.tpMain_1_Top.Size = new System.Drawing.Size(730, 57);
+            // 
+            // tpMain_2_Bottom
+            // 
+            this.tpMain_2_Bottom.Controls.Add(this.btnCancel);
+            this.tpMain_2_Bottom.Controls.Add(this.btnOk);
+            this.tpMain_2_Bottom.Controls.Add(this.kmFPNLBtnGup);
+            // 
+            // kpControlsEnabled_ModDef
+            // 
+{16}
+            this.kpControlsEnabled_ModDef.HostControl = this.tpMain_2_Fill;
+            // 
+            // dgvMain
+            // 
+{6}
+            this.dgvMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMain.Field = wf_RetObj;
+            this.dgvMain.Location = new System.Drawing.Point(0, 0);
+            this.dgvMain.Name = "dgvMain";
+            this.dgvMain.RightBit = null;
+            this.dgvMain.Size = new System.Drawing.Size(730, 412);
+            this.dgvMain.TabIndex = 4;
+            this.dgvMain.ToolBarIsVisible = true;
+{4}
+            // 
+            // checkbAddDef
+            // 
+            this.checkbAddDef.AutoSize = true;
+            this.checkbAddDef.Checked = true;
+            this.checkbAddDef.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkbAddDef.Field = null;
+            this.checkbAddDef.Location = new System.Drawing.Point(83, 8);
+            this.checkbAddDef.Name = "checkbAddDef";
+            this.checkbAddDef.RightBit = null;
+            this.checkbAddDef.Size = new System.Drawing.Size(162, 16);
+            this.checkbAddDef.TabIndex = 45;
+            this.checkbAddDef.Text = "&amp;N增加时以选中行为默认值";
+            this.checkbAddDef.UseVisualStyleBackColor = true;
+            // 
+            // btnDel
+            // 
+            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDel.Enabled = false;
+            this.btnDel.Location = new System.Drawing.Point(649, 4);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.RightBit = "{15}";
+            this.btnDel.Size = new System.Drawing.Size(75, 23);
+            this.btnDel.TabIndex = 43;
+            this.btnDel.Text = "&amp;D删除";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // btnUpd
+            // 
+            this.btnUpd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpd.Enabled = false;
+            this.btnUpd.Location = new System.Drawing.Point(564, 4);
+            this.btnUpd.Name = "btnUpd";
+            this.btnUpd.RightBit = "{14}";
+            this.btnUpd.Size = new System.Drawing.Size(75, 23);
+            this.btnUpd.TabIndex = 44;
+            this.btnUpd.Text = "&amp;U修改";
+            this.btnUpd.UseVisualStyleBackColor = true;
+            this.btnUpd.Click += new System.EventHandler(this.btnUpd_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.Location = new System.Drawing.Point(480, 4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.RightBit = "{13}";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 42;
+            this.btnAdd.Text = "&amp;A增加";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnQue
+            // 
+            this.btnQue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnQue.Location = new System.Drawing.Point(396, 4);
+            this.btnQue.Name = "btnQue";
+            this.btnQue.RightBit = "{12}";
+            this.btnQue.Size = new System.Drawing.Size(75, 23);
+            this.btnQue.TabIndex = 40;
+            this.btnQue.Text = "&amp;Q查询";
+            this.btnQue.UseVisualStyleBackColor = true;
+            this.btnQue.Click += new System.EventHandler(this.btnQue_Click);
+            // 
+            // btnList
+            // 
+            this.btnList.Enabled = false;
+            this.btnList.Location = new System.Drawing.Point(5, 4);
+            this.btnList.Name = "btnList";
+            this.btnList.RightBit = null;
+            this.btnList.Size = new System.Drawing.Size(75, 23);
+            this.btnList.TabIndex = 41;
+            this.btnList.Text = "&amp;L细节";
+            this.btnList.UseVisualStyleBackColor = true;
+            this.btnList.Click += new System.EventHandler(this.btnList_Click);
+            // 
+            // ksWorkViewCRequest_Que
+            // 
+			fpb_RetObj.Field = this.wf_RetObj;
+            fpb_RetObj.ParamName = "@DataTable";
+            this.ksWorkViewCRequest_Que.Request.OutputParamBindings.Add(fpb_RetObj);
+            this.ksWorkViewCRequest_Que.Command = 0;
+            this.ksWorkViewCRequest_Que.DirectTransfer = true;
+            // 
+            // 
+            // 
+{7}
+            this.ksWorkViewCRequest_Que.Request.RequestType = "{8}";
+            this.ksWorkViewCRequest_Que.Request.TimeOut = 3000;
+            // 
+            // ksWorkViewCRequest_Add
+            // 
+            this.ksWorkViewCRequest_Add.Command = 0;
+            this.ksWorkViewCRequest_Add.DirectTransfer = true;
+            // 
+            // 
+            // 
+            this.ksWorkViewCRequest_Add.Request.RequestType = "{9}";
+            this.ksWorkViewCRequest_Add.Request.TimeOut = 3000;
+            // 
+            // ksWorkViewCRequest_Del
+            // 
+            this.ksWorkViewCRequest_Del.Command = 0;
+            this.ksWorkViewCRequest_Del.DirectTransfer = true;
+            // 
+            // 
+            // 
+            this.ksWorkViewCRequest_Del.Request.RequestType = "{11}";
+            this.ksWorkViewCRequest_Del.Request.TimeOut = 3000;
+            // 
+            // ksWorkViewCRequest_Upd
+            // 
+            this.ksWorkViewCRequest_Upd.Command = 0;
+            this.ksWorkViewCRequest_Upd.DirectTransfer = true;
+            // 
+            // 
+            // 
+            this.ksWorkViewCRequest_Upd.Request.RequestType = "{10}";
+            this.ksWorkViewCRequest_Upd.Request.TimeOut = 3000;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Location = new System.Drawing.Point(648, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.RightBit = null;
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 8;
+            this.btnCancel.Text = "&amp;C取消";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnOk
+            // 
+            this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOk.Location = new System.Drawing.Point(566, 3);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.RightBit = null;
+            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.TabIndex = 6;
+            this.btnOk.Text = "&amp;O确定";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
+            // kmFPNLBtnGup
+            // 
+            this.kmFPNLBtnGup.CurrentRow = 1;
+            this.kmFPNLBtnGup.Location = new System.Drawing.Point(4, 4);
+            this.kmFPNLBtnGup.Name = "kmFPNLBtnGup";
+            this.kmFPNLBtnGup.Size = new System.Drawing.Size(197, 25);
+            this.kmFPNLBtnGup.TabIndex = 7;
+            this.kmFPNLBtnGup.Visible = false;
+            this.kmFPNLBtnGup.ClickBtnLast += new System.EventHandler(this.kmFPNLBtnGup_ClickBtnLast);
+            this.kmFPNLBtnGup.ClickBtnFirst += new System.EventHandler(this.kmFPNLBtnGup_ClickBtnFirst);
+            this.kmFPNLBtnGup.ClickBtnPrevious += new System.EventHandler(this.kmFPNLBtnGup_ClickBtnPrevious);
+            this.kmFPNLBtnGup.ClickBtnNext += new System.EventHandler(this.kmFPNLBtnGup_ClickBtnNext);
+            // 
+            // wf_RetObj
+            // 
+            // 
+            // 
+            // 
+            this.wf_RetObj.Checker.ErrorMessage = null;
+            this.wf_RetObj.Checker.Hint = null;
+            this.wf_RetObj.Checker.Max = new decimal(new int[] {{
+            65535,
+            0,
+            0,
+            0}});
+            this.wf_RetObj.Checker.Min = new decimal(new int[] {{
+            65535,
+            0,
+            0,
+            -2147483648}});
+            this.wf_RetObj.ObjectDataType = Kingstar.UIFramework.WorkView.KSWorkField.ObjectType.KSDataTale;
+            // 
+            // {1}
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(744, 533);
+            this.Name = "{1}";
+            this.Text = "{1}";
+            this.Load += new System.EventHandler(this.{1}_Load);
+            this.tcMain.ResumeLayout(false);
+            this.tpMain_1_Fill.ResumeLayout(false);
+            this.tpMain_1_Bottom.ResumeLayout(false);
+            this.tpMain_1_Bottom.PerformLayout();
+            this.tpMain_2_Bottom.ResumeLayout(false);
+            this.tpMain_1.ResumeLayout(false);
+            this.tpMain_2.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }}
+
+        #endregion
+
+{5}
+        private KmNGTF.Controls.KmDataGridView dgvMain;
+        private KmNGTF.Controls.KmCheckBox checkbAddDef;
+        private KmNGTF.Controls.KmButton btnDel;
+        private KmNGTF.Controls.KmButton btnUpd;
+        private KmNGTF.Controls.KmButton btnAdd;
+        private KmNGTF.Controls.KmButton btnQue;
+        private KmNGTF.Controls.KmButton btnList;
+        private Kingstar.UIFramework.WorkView.KSWorkViewCommandRequest ksWorkViewCRequest_Que;
+        private Kingstar.UIFramework.WorkView.KSWorkViewCommandRequest ksWorkViewCRequest_Add;
+        private Kingstar.UIFramework.WorkView.KSWorkViewCommandRequest ksWorkViewCRequest_Del;
+        private Kingstar.UIFramework.WorkView.KSWorkViewCommandRequest ksWorkViewCRequest_Upd;
+        private KmNGTF.Controls.KmButton btnCancel;
+        private KmNGTF.Controls.KmButton btnOk;
+        private KmNGTF.Controls.Custom.KmFPNLBtnGup kmFPNLBtnGup;
+        private Kingstar.UIFramework.WorkView.KSWorkField wf_RetObj;
+    }}
+}}</entry>
+    <entry name="InitKmDateTextBox">            this.{0} = new KmNGTF.Controls.KmDateTextBox();</entry>
+    <entry name="KmDateTextBox">            // 
+            // {0}
+            // 
+            this.{0}.DateFormat = KmNGTF.Controls.DateFormat.yyMMdd;
+            this.{0}.Location = new System.Drawing.Point({1}, {2});
+            this.{0}.Name = "{0}";
+            this.{0}.RightBit = null;
+            this.{0}.Size = new System.Drawing.Size(120, 20);
+            this.{0}.TabIndex = {3};
+            this.{0}.UpdateStatusBarEnabled = true;</entry>
+    <entry name="DeclearKmDateTextBox">        private KmNGTF.Controls.KmDateTextBox {0};</entry>
+    <entry name="SetReadOnly">            this.{0}.ReadOnly = true;</entry>
+    <entry name="SetEnabled">            this.{0}.Enabled = false;</entry>
+    <entry name="InitKmNumericBox">            this.{0} = new KmNGTF.Controls.KmNumericBox();</entry>
+    <entry name="SetModDef">            this.{1}.Controls.Add(this.{0});</entry>
+    <entry name="SetField">            this.{0}.Field = this.wf_{1};</entry>
+    <entry name="KmNumericBox">            // 
+            // {0}
+            // 
+            this.{0}.AllowNegative = false;
+            this.{0}.DecimaPprecision = {1};
+            this.{0}.Location = new System.Drawing.Point({2}, {3});
+            this.{0}.Name = "{0}";
+            this.{0}.RightBit = null;
+            this.{0}.Size = new System.Drawing.Size(120, 20);
+            this.{0}.TabIndex = {4};
+            this.{0}.Text = "";
+            this.{0}.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.{0}.UpdateStatusBarEnabled = true;
+			this.{0}.FormatString = "{5}";
+            this.{0}.Value = new decimal(new int[] {{
+            0,
+            0,
+            0,
+            0}});</entry>
+    <entry name="DeclearKmNumericBox">        private KmNGTF.Controls.KmNumericBox {0};</entry>
+    <entry name="InitKmCheckBox">            this.{0} = new KmNGTF.Controls.KmCheckBox();</entry>
+    <entry name="KmCheckBox">            // 
+            // {0}
+            // 
+            this.{0}.AutoSize = true;
+            this.{0}.Location = new System.Drawing.Point({1}, {2});
+            this.{0}.Name = "{0}";
+            this.{0}.RightBit = null;
+            this.{0}.Size = new System.Drawing.Size(120,20);
+            this.{0}.TabIndex = {3};
+            this.{0}.Text = "{4}";
+            this.{0}.UseVisualStyleBackColor = true;</entry>
+    <entry name="DeclearKmCheckBox">        private KmNGTF.Controls.KmCheckBox {0};</entry>
+    <entry name="InitKmButton">            this.{0} = new KmNGTF.Controls.KmButton();</entry>
+    <entry name="KmButton">            // 
+            // {0}
+            // 
+            this.{0}.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.{0}.Location = new System.Drawing.Point({1}, {2});
+            this.{0}.Name = "{0}";
+            this.{0}.RightBit = null;
+            this.{0}.Size = new System.Drawing.Size(120, 20);
+            this.{0}.TabIndex = {3};
+            this.{0}.Text = "{4}";
+            this.{0}.UseVisualStyleBackColor = true;</entry>
+    <entry name="DeclearKmButton">        private KmNGTF.Controls.KmButton {0};</entry>
+    <entry name="InitKmProgressBar">            this.{0} = new KmNGTF.Controls.KmProgressBar();</entry>
+    <entry name="KmProgressBar">            // 
+            // {0}
+            // 
+            this.{0}.Location = new System.Drawing.Point({1}, {2});
+            this.{0}.Name = "{0}";
+            this.{0}.RightBit = null;
+            this.{0}.Size = new System.Drawing.Size(120, 20);
+            this.{0}.TabIndex = {3};</entry>
+    <entry name="DeclearKmProgressBar">        private KmNGTF.Controls.KmProgressBar {0};</entry>
+	<entry name="ReFillWorkFiled">				wf_io_{0}.SetValue(dgvr.Cells["{0}"].Value);</entry>
+	<entry name="InitEnvironment">            dtC.Rows.Add(new object[] {{ col++, "{0}", "{1}", 0, 80 }});</entry>
+  </section>
+</profile>
